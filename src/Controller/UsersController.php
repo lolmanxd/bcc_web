@@ -9,10 +9,10 @@
         public function beforeFilter(Event $event)
         {
             parent::beforeFilter($event);
-            $this->Auth->allow(['cadastro','salvar']);
+            $this->Auth->allow(['cadastro','salvar','index']);
         }
 
-        public function login()
+        public function index()
         {
             if($this->request->is('post')){
                 
@@ -25,6 +25,11 @@
                     $this->Flash->set('Login ou Senha Invalidos',['element' => 'error']);
                 }
             }
+            
+        }
+
+        public function login()
+        {
             
         }
 
